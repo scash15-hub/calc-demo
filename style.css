@@ -8,7 +8,7 @@
     min-height: 1.2rem;
     opacity: 0.75;
     /* font */
-    overflow: auto;
+    overflow-x: auto;
     white-space: nowrap;
 }
 
@@ -16,7 +16,7 @@
     font-size: 2rem;
     line-height: 1.2;
     /* font */
-    overflow: auto;
+    overflow-x: auto;
     white-space: nowrap;
 }
 
