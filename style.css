@@ -1,0 +1,26 @@
+.calc-display {
+    background: rgb(141, 190, 255);
+    color: aliceblue;
+    border: 1px solid rgb(8, 139, 247);
+}
+
+.calc-history {
+    min-height: 1.2rem;
+    opacity: 0.75;
+    /* font */
+    overflow: auto;
+    white-space: nowrap;
+}
+
+.calc-main {
+    font-size: 2rem;
+    line-height: 1.2;
+    /* font */
+    overflow: auto;
+    white-space: nowrap;
+}
+
+.calc-status {
+   min-height: 1.2rem; 
+    opacity: 0.85;
+}
