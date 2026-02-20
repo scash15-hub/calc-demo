@@ -1,26 +1,119 @@
+/* ===== Pretty Add-On (DO NOT DELETE ABOVE) ===== */
+
+/* Soft pastel background using your palette */
+body {
+    background: linear-gradient(135deg, #FFEAEE, #C0F5FA);
+}
+
+/* Make the card soft + rounded */
+.card {
+    border-radius: 25px;
+    border: none;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+    background-color: white;
+}
+
+/* Upgrade your blue display without removing your color */
 .calc-display {
-    background: rgb(141, 190, 255);
+    border-radius: 20px;
+    padding: 18px;
+    box-shadow:
+        inset 0 6px 12px rgba(0, 0, 0, 0.25),
+        0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Make numbers pop slightly more */
+.calc-main {
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Smooth buttons */
+button {
+    border-radius: 15px !important;
+    font-weight: 600;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Number buttons (mint) */
+.btn-dark {
+    background-color: #A7DCBE !important;
+    border: none !important;
+    color: #2f2f2f !important;
+}
+
+.btn-dark:hover {
+    background-color: #94cdb0 !important;
+    transform: scale(1.05);
+}
+
+/* Operator buttons (baby blue) */
+.btn-outline-info {
+    background-color: #C0F5FA !important;
+    border: none !important;
+    color: #333 !important;
+}
+
+.btn-outline-info:hover {
+    background-color: #a8e9f0 !important;
+    transform: scale(1.05);
+}
+
+/* Clear button (peach) */
+.btn-outline-primary {
+    background-color: #FED6C3 !important;
+    border: none !important;
+    color: #333 !important;
+}
+
+.btn-outline-primary:hover {
+    background-color: #fbc3ac !important;
+    transform: scale(1.05);
+}
+
+/* Equals button (soft yellow) */
+.btn-outline-success {
+    background-color: #F4F6B6 !important;
+    border: none !important;
+    color: #333 !important;
+}
+
+.btn-outline-success:hover {
+    background-color: #e7ea9d !important;
+    transform: scale(1.05);
+}
+
+/* Click press effect */
+button:active {
+    transform: scale(0.95);
+}
+
+
+/* 
+.calc-display {
+background: rgb(141, 190, 255);
     color: aliceblue;
     border: 1px solid rgb(8, 139, 247);
 }
 
 .calc-history {
-    min-height: 1.2rem;
-    opacity: 0.75;
-    /* font */
-    overflow-x: auto;
-    white-space: nowrap;
+  min-height: 1.2rem;
+  opacity: 0.75;
+  font-family: ui-monospace, Menlo, Consolas, "Courier New", monospace;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
 .calc-main {
-    font-size: 2rem;
-    line-height: 1.2;
-    /* font */
-    overflow-x: auto;
-    white-space: nowrap;
+  font-size: 2rem;
+  line-height: 1.2;
+  font-family: ui-monospace, Menlo, Consolas, "Courier New", monospace;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
 .calc-status {
-   min-height: 1.2rem; 
-    opacity: 0.85;
+  min-height: 1.2rem;
+  opacity: 0.85;
 }
+ */
