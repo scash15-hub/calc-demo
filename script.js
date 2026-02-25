@@ -7,7 +7,7 @@ let storedNumber = null
 //The operator currently selected (+ - * /)
 let currentOperator = ''
 
-//Used only for dispayinmg the history line
+//Used only for displaying the history line
 //Example: ["5", "+", "3"]
 let historyParts = []
 
@@ -43,3 +43,19 @@ function pressNumber(digit) {
     }
     updateScreen()
 }
+
+function pressOperator(op) {
+    setStatus('')
+    if (typeNumberText === '' && storedNumber === null) {
+        setStatus('Enter a number first')
+    }
+
+    if (storedNumber === null) {
+        storedNumber = Number(typeNumberText)
+        currentOperator = op
+        historyParts = [String(storedNumber), currentOperator]
+        typeNumberText = ''
+        updateScreen();
+    }
+}
+
