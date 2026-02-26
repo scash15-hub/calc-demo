@@ -22,7 +22,7 @@ function setStatus(message) {
 function showSymbol(op) {
     if (op === '*') return 'x'
     if (op === '/') return '÷'
-    if (op === '-') return '&#x2212'
+    if (op === '-') return '−'
     return op
 }
 
@@ -31,7 +31,28 @@ function updateScreen() {
     const history = document.getElementById('historyLine')
     const status = document.getElementById('statusLine')
 
-    display.textContent = typeNumberText
+    if (typeNumberText !== '') {
+        display.textContent = typeNumberText
+    } else {
+        display.textContent = '0'
+    }
+
+
+    if (historyParts.length === 0) {
+        history.textContent = ''
+    }
+    if (historyParts.length === 1) {
+        history.textContent = historyParts[0]
+    }
+    if (historyParts.length === 2) {
+        history.textContent = historyParts[0] + ' ' + showSymbol(historyParts[1])
+    }
+    if (historyParts.length === 3) {
+        history.textContent = historyParts[0] + ' ' + showSymbol(historyParts[1]) + ' ' + historyParts[2]
+    }
+
+    if (status.textContent === '') status.textContent = 'Ready'
+
 }
 
 function pressNumber(digit) {
@@ -46,8 +67,10 @@ function pressNumber(digit) {
 
 function pressOperator(op) {
     setStatus('')
+
     if (typeNumberText === '' && storedNumber === null) {
         setStatus('Enter a number first')
+        updateScreen()
     }
 
     if (storedNumber === null) {
@@ -57,5 +80,24 @@ function pressOperator(op) {
         typeNumberText = ''
         updateScreen();
     }
+
+    if (storedNumber !== '') {
+        const secondNumber = typeNumberText
+
+        if(currentOperator === '/' && secondNumber === 0) {
+            setStatus('Cannot divide by 0.')
+            updateScreen()
+            return
+        }
+    }
 }
 
+function clearAll() {
+    typeNumberText = ''
+    storedNumber = null
+    currentOperator = ''
+    historyParts = []
+
+    setStatus('Cleared')
+    updateScreen()
+}
