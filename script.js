@@ -84,12 +84,34 @@ function pressOperator(op) {
     if (storedNumber !== '') {
         const secondNumber = typeNumberText
 
-        if(currentOperator === '/' && secondNumber === 0) {
+        if (currentOperator === '/' && secondNumber === 0) {
             setStatus('Cannot divide by 0.')
             updateScreen()
             return
         }
     }
+
+
+        let result = storedNumber
+
+    if (currentOperator === '+') {
+        result = storedNumber + secondNumber
+    } else if (currentOperator === '-') {
+        result = storedNumber - secondNumber
+    } else if (currentOperator === '*') {
+        result = storedNumber * secondNumber
+    } else if (currentOperator === '/') {
+        result = storedNumber / secondNumber
+    }
+
+    storedNumber = result
+    currentOperator = op
+
+    historyParts = [String(storedNumber), currentOperator]
+    
+    typeNumberText = ''
+    updateScreen()
+    return
 }
 
 function clearAll() {
@@ -99,5 +121,36 @@ function clearAll() {
     historyParts = []
 
     setStatus('Cleared')
+    updateScreen()
+}
+
+function calculate() {
+    setStatus('')
+    if (storedNumber === null || currentOperator === '' || typeNumberText === '') {
+        setStatus('Incomplete operation')
+        updateScreen()
+        return
+    }
+
+    const secondNumber = Number(typeNumberText)
+
+    historyParts = [String(storedNumber), currentOperator, String(secondNumber)]
+
+    let result = storedNumber
+
+    if (currentOperator === '+') {
+        result = storedNumber + secondNumber
+    } else if (currentOperator === '-') {
+        result = storedNumber - secondNumber
+    } else if (currentOperator === '*') {
+        result = storedNumber * secondNumber
+    } else if (currentOperator === '/') {
+        result = storedNumber / secondNumber
+    }
+
+    storedNumber = result
+    currentOperator = ''
+    typeNumberText = ''
+    setStatus('Done')
     updateScreen()
 }
